@@ -1,0 +1,42 @@
+page-home {
+
+    .list-header-md{
+        font-size: 2rem;
+        font-variant: all-small-caps;
+    }
+    .product-section{
+        margin-bottom: 1rem;
+    }
+    .accordion-list {
+        // background: color($colors, light);
+        height: 100%;
+    }
+    .section {
+        background: #fff;
+        color: #000;
+    }
+    .section-active {
+        background: #ffc400;
+        color: #fff;
+
+        &.list-header-md{
+            margin-bottom: 0 !important;
+        }
+    }
+ 
+    .child {
+        background: #e8e7e6;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .child-item {
+        background: #f3f2f1;
+        padding: 10px;
+    }
+    .label {
+        margin: 0px;
+    }
+    .list {
+        margin-bottom: 4px;
+    }
+}

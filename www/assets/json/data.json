@@ -1,0 +1,28 @@
+{
+"llistat":[{
+    "title":"fruites", "items":[
+        "Taronges", 
+        "Platans", 
+        "Pomes", 
+        "Kiwis", 
+        "Peres", 
+        "Advocat", 
+        "Temporada"
+    ]},{
+        "title":"verdures", "items":[
+        "Patates", 
+        "Cebes", 
+        "Alls", 
+        "Pastanagues", 
+        "Api", 
+        "Coliflor", 
+        "Broquil", 
+        "Bimi", 
+        "Verduras Caldo", 
+        "Espinacs", 
+        "Kale", 
+        "Preparats", 
+        "Temporada"
+    ]}
+]
+  }
