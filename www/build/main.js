@@ -177,9 +177,9 @@ var HomePage = (function () {
             _this.llistatInicial = data;
         });
     }
-    HomePage.prototype.saveItem = function (item, fruita) {
-        console.log(fruita);
-        (this.llistatCompra.indexOf(fruita) === -1) ? this.llistatCompra.push(fruita) : console.log('NOPE');
+    HomePage.prototype.saveItem = function (item, producta, titul) {
+        var comp = { titul: titul, producta: producta };
+        (this.llistatCompra.indexOf(comp.producta) === -1) ? this.llistatCompra.push(comp) : console.log('NOPE');
         console.log(this.llistatCompra);
         item.close();
     };
@@ -190,12 +190,13 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/pau/Republica/NoeShoppingListApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Noe Shopping List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="llistatInicial">\n  <div class="content-list">  \n  \n  <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion-list">\n      <ion-list-header (click)="toggleSection(i)" [ngClass]="{\'section-active\': item.open, \'section\': !item.open}">{{item.title}}</ion-list-header>\n      <div *ngIf="item.open" class="product-section">\n      <ion-item-sliding #slidingItem *ngFor="let ite of item.items">\n    \n      <ion-item >{{ite}}</ion-item>\n    <ion-item-options side="right">\n        <button ion-button expandable (click)="saveItem(slidingItem, ite)">\n          AFEGIR\n        </button>\n      </ion-item-options>\n   \n  </ion-item-sliding>\n</div>\n  </ion-list>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/pau/Republica/NoeShoppingListApp/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/home/pau/Republica/NoeShoppingListApp/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Noe Shopping List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="llistatInicial">\n  <div class="content-list">  \n  \n  <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion-list">\n      <ion-list-header (click)="toggleSection(i)" [ngClass]="{\'section-active\': item.open, \'section\': !item.open}">{{item.title}}</ion-list-header>\n      <div *ngIf="item.open" class="product-section">\n      <ion-item-sliding #slidingItem *ngFor="let ite of item.items">\n    \n      <ion-item >{{ite}}</ion-item>\n    <ion-item-options side="right">\n        <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title)">\n          AFEGIR\n        </button>\n      </ion-item-options>\n   \n  </ion-item-sliding>\n</div>\n  </ion-list>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/pau/Republica/NoeShoppingListApp/src/pages/home/home.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]) === "function" && _b || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=home.js.map

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
   public llistatInicial: any;
-  public llistatCompra: string[] = [];
+  public llistatCompra = [];
 
   constructor(public navCtrl: NavController, private _llistatCompra: LlistatCompraService){
     this._llistatCompra.getData().subscribe((data)=>{
@@ -18,9 +18,9 @@ export class HomePage {
     })
   }
 
-  saveItem(item: ItemSliding, fruita: string){
-    console.log(fruita);
-    (this.llistatCompra.indexOf(fruita) === -1) ? this.llistatCompra.push(fruita):console.log('NOPE');
+  saveItem(item: ItemSliding, producta: string, titul: string){
+    let comp = {titul: titul, producta: producta};
+    (this.llistatCompra.indexOf(comp.producta) === -1) ? this.llistatCompra.push(comp):console.log('NOPE');
     console.log(this.llistatCompra);
     item.close();
   }
