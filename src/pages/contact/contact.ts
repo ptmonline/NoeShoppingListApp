@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ItemSliding  } from 'ionic-angular';
+import { NavController, NavParams, ItemSliding } from 'ionic-angular';
 import _ from "lodash";
 import { GlobalHelper } from "../helpers/global.helper";
 
@@ -20,16 +20,5 @@ export class ContactPage {
     this.compraLlistat = this._globalHelper.removeItem(comp, this.compraLlistat)
     item.close();
   }
-
-  // getColor(id){
-  //   switch (id){
-  //     case 1: {
-  //       return '#F4C9C3';
-  //     }
-  //     case 2: {
-  //       return '#B2BAC2';
-  //     }
-  //   }
-  // }
 
 }

@@ -35,7 +35,6 @@ export class HomePage {
     if (this.llistatInicial != null) {
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }
-
   }
 
   done() {

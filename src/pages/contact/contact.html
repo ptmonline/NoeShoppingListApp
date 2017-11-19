@@ -9,22 +9,15 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Llista per avui</ion-list-header>
-    <!--<ion-item *ngFor="let item of compraLlistat" [ngStyle]="{'background-color':getColor(item.id)}">
-      <span (click)="deleteItem(ite, item.title, item.id)">
-      <i><b>{{item.titul}}</b></i> {{item.producta}}
-      </span>
-    </ion-item>-->
-
     <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">
-    
       <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}"><i><b>{{item.titul}}</b></i> {{item.producta}}</ion-item>
-    <ion-item-options side="right">
+      <ion-item-options side="right">
         <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">
           BORRAR
         </button>
       </ion-item-options>
-   
-  </ion-item-sliding>
+
+    </ion-item-sliding>
 
 
   </ion-list>
