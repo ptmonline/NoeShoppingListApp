@@ -1,6 +1,8 @@
 {
 "llistat":[{
-    "title":"fruites", "items":[
+    "id": 1,
+    "title":"fruites", 
+    "items":[
         "Taronges", 
         "Platans", 
         "Pomes", 
@@ -9,7 +11,9 @@
         "Advocat", 
         "Temporada"
     ]},{
-        "title":"verdures", "items":[
+        "id": 2,
+        "title":"verdures", 
+        "items":[
         "Patates", 
         "Cebes", 
         "Alls", 

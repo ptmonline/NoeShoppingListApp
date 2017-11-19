@@ -14,7 +14,7 @@
     
       <ion-item >{{ite}}</ion-item>
     <ion-item-options side="right">
-        <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title)">
+        <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title, item.id)">
           AFEGIR
         </button>
       </ion-item-options>
@@ -23,4 +23,5 @@
 </div>
   </ion-list>
 </div>
+<button ion-button (click)="done()">Done</button>
 </ion-content>

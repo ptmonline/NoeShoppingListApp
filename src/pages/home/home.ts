@@ -3,6 +3,7 @@ import { NavController, ItemSliding } from 'ionic-angular';
 import { LlistatCompraService } from '../../services/llistat.service';
 import 'rxjs/add/operator/map';
 import { GlobalHelper } from "../helpers/global.helper";
+import { ContactPage } from "../contact/contact";
 
 @Component({
   selector: 'page-home',
@@ -22,12 +23,11 @@ export class HomePage {
     })
   }
 
-  saveItem(item: ItemSliding, producta: string, titul: string) {
-    let comp = { titul: titul, producta: producta };
+  saveItem(item: ItemSliding, producta: string, titul: string, id: number) {
+    let comp = { id: id, titul: titul, producta: producta };
     if (!this._globalHelper.checkUniq(comp, this.llistatCompra)) {
       this.llistatCompra.push(comp);
     }
-    console.log(this.llistatCompra);
     item.close();
   }
 
@@ -36,5 +36,9 @@ export class HomePage {
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }
 
+  }
+
+  done() {
+    this.navCtrl.push(ContactPage, this.llistatCompra);
   }
 }

@@ -9,9 +9,8 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let item of compraLlistat">
+      <i><b>{{item.titul}}</b></i> {{item.producta}}
     </ion-item>
   </ion-list>
 </ion-content>
