@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ItemSliding } from 'ionic-angular';
 import { LlistatCompraService } from '../../services/llistat.service';
 import 'rxjs/add/operator/map';
+import { GlobalHelper } from "../helpers/global.helper";
 
 @Component({
   selector: 'page-home',
@@ -12,23 +13,28 @@ export class HomePage {
   public llistatInicial: any;
   public llistatCompra = [];
 
-  constructor(public navCtrl: NavController, private _llistatCompra: LlistatCompraService){
-    this._llistatCompra.getData().subscribe((data)=>{
+  constructor(
+    public navCtrl: NavController,
+    private _llistatCompra: LlistatCompraService,
+    private _globalHelper: GlobalHelper) {
+    this._llistatCompra.getData().subscribe((data) => {
       this.llistatInicial = data;
     })
   }
 
-  saveItem(item: ItemSliding, producta: string, titul: string){
-    let comp = {titul: titul, producta: producta};
-    (this.llistatCompra.indexOf(comp.producta) === -1) ? this.llistatCompra.push(comp):console.log('NOPE');
+  saveItem(item: ItemSliding, producta: string, titul: string) {
+    let comp = { titul: titul, producta: producta };
+    if (!this._globalHelper.checkUniq(comp, this.llistatCompra)) {
+      this.llistatCompra.push(comp);
+    }
     console.log(this.llistatCompra);
     item.close();
   }
 
   toggleSection(i) {
-    if(this.llistatInicial != null){
+    if (this.llistatInicial != null) {
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }
-    
+
   }
 }

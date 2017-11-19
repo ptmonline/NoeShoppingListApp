@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
 import {LlistatCompraService} from '../services/llistat.service'
+import { GlobalHelper } from "../pages/helpers/global.helper";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {LlistatCompraService} from '../services/llistat.service'
     StatusBar,
     SplashScreen,
     LlistatCompraService,
+    GlobalHelper,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
