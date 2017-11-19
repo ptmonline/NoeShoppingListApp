@@ -25678,6 +25678,16 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-contact .verdures {
+  display: block;
+  width: 100%;
+  background-color: #B2BAC2;
+}
+
+page-contact .fruites {
+  background-color: #F4C9C3;
+}
+
 page-home .list-header-md {
   font-size: 2rem;
   font-variant: all-small-caps;
