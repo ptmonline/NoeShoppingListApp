@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ItemSliding } from 'ionic-angular';
+import { NavController, ItemSliding, NavParams } from 'ionic-angular';
 import { LlistatCompraService } from '../../services/llistat.service';
 import 'rxjs/add/operator/map';
 import { GlobalHelper } from "../helpers/global.helper";
@@ -16,11 +16,16 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
+    public navParams: NavParams,
     private _llistatCompra: LlistatCompraService,
     private _globalHelper: GlobalHelper) {
+
+    (this.navParams.data.length) ? this.llistatCompra = this.navParams.data : this.llistatCompra = [];  
+
     this._llistatCompra.getData().subscribe((data) => {
       this.llistatInicial = data;
-    })
+    });
+
   }
 
   saveItem(item: ItemSliding, producta: string, titul: string, id: number) {
@@ -38,6 +43,6 @@ export class HomePage {
   }
 
   done() {
-    this.navCtrl.push(ContactPage, this.llistatCompra);
+    this.navCtrl.setRoot(ContactPage, this.llistatCompra);
   }
 }
