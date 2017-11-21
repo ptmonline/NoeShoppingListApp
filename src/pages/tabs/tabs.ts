@@ -5,7 +5,8 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  providers: [HomePage]
 })
 export class TabsPage {
 
@@ -13,7 +14,19 @@ export class TabsPage {
   tab2Root = AboutPage;
   tab3Root = ContactPage;
 
-  constructor() {
+  tab2Params: any;
 
+  constructor(private _homePage: HomePage) {
+    this.tab2Params = this.newFunction();
   }
+
+    private newFunction(): any {
+      console.log(this._homePage.llistatCompra);
+        return this._homePage.llistatCompra;
+    }
+
+    getList(){
+      console.log('clicked')
+      this.tab2Params = this.newFunction();
+    }
 }
