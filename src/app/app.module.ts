@@ -10,9 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {HttpClientModule} from '@angular/common/http';
-import {LlistatCompraService} from '../services/llistat.service'
+import { HttpClientModule } from '@angular/common/http';
+import { LlistatCompraService } from '../services/llistat.service'
 import { GlobalHelper } from "../pages/helpers/global.helper";
+import { MenuComponent } from '../pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,20 @@ import { GlobalHelper } from "../pages/helpers/global.helper";
     AboutPage,
     ContactPage,
     HomePage,
+    MenuComponent
     // TabsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      menuType: 'push',
+      platforms: {
+        ios: {
+          menuType: 'overlay',
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,6 +42,7 @@ import { GlobalHelper } from "../pages/helpers/global.helper";
     AboutPage,
     ContactPage,
     HomePage,
+    // MenuComponent
     // TabsPage
   ],
   providers: [
@@ -40,7 +50,7 @@ import { GlobalHelper } from "../pages/helpers/global.helper";
     SplashScreen,
     LlistatCompraService,
     GlobalHelper,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
