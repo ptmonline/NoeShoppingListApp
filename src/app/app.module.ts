@@ -20,7 +20,7 @@ import { GlobalHelper } from "../pages/helpers/global.helper";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    // TabsPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { GlobalHelper } from "../pages/helpers/global.helper";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    // TabsPage
   ],
   providers: [
     StatusBar,

@@ -1,32 +1,286 @@
 {
-"llistat":[{
-    "id": 1,
-    "title":"fruites", 
-    "items":[
-        "Taronges", 
-        "Platans", 
-        "Pomes", 
-        "Kiwis", 
-        "Peres", 
-        "Advocat", 
-        "Temporada"
-    ]},{
-        "id": 2,
-        "title":"verdures", 
-        "items":[
-        "Patates", 
-        "Cebes", 
-        "Alls", 
-        "Pastanagues", 
-        "Api", 
-        "Coliflor", 
-        "Broquil", 
-        "Bimi", 
-        "Verduras Caldo", 
-        "Espinacs", 
-        "Kale", 
-        "Preparats", 
-        "Temporada"
-    ]}
-]
-  }
+    "llistat": [
+        {
+            "id": 1,
+            "title": "fruites",
+            "items": [
+                "Taronges",
+                "Platans",
+                "Pomes",
+                "Kiwis",
+                "Peres",
+                "Advocat",
+                "Temporada"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "verdures",
+            "items": [
+                "Patates",
+                "Cebes",
+                "Alls",
+                "Pastanagues",
+                "Api",
+                "Coliflor",
+                "Broquil",
+                "Bimi",
+                "Verduras Caldo",
+                "Espinacs",
+                "Kale",
+                "Preparats",
+                "Temporada"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "congelats",
+            "items": [
+                "Montgeta",
+                "Pèsols",
+                "Pebrots",
+                "Ensaladilla rusa",
+                "Calamar",
+                "Gambes",
+                "Bacallà",
+                "Barretes de peix"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "begudes",
+            "items": [
+                "Coca Coles",
+                "Cerveses",
+                "Aigues"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "pasta",
+            "items": [
+                "Spaguettis",
+                "Espirals",
+                "Macarrons",
+                "Pasta sopa",
+                "Fideu fideuà",
+                "Cous Cous",
+                "Arrós"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "pa",
+            "items": [
+                "Pa",
+                "Pa motllo",
+                "Pa burguers",
+                "Briox o bollería",
+                "Bastonets",
+                "Galetes Salades",
+                "Galetes pizza",
+                "Tortites amb xoco"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "llaunes",
+            "items": [
+                "Tonyina",
+                "Sardines",
+                "Tomàquet Natural",
+                "Tomàquet fregit",
+                "Olivess",
+                "Llegums (mongeta petita, cigrons)"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "embotits",
+            "items": [
+                "Xoriço",
+                "Fuet",
+                "Pernil Salat",
+                "Gall Dindi",
+                "Bacon",
+                "Altres"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "làctics",
+            "items": [
+                "Iogurts",
+                "Kèfir vaca",
+                "Formatge cunya",
+                "Formatge ratllat",
+                "Formatge parmesà",
+                "Mantega",
+                "Nata líquida"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "masses",
+            "items": [
+                "Massa pizza",
+                "Massa filo",
+                "Massa empanada",
+                "Massa brisa"
+            ]
+        },
+        {
+            "id": 11,
+            "title": "pollastres",
+            "items": [
+                "Sencer",
+                "Pits",
+                "Part dalt cuixes",
+                "Pinxitos",
+                "Nuggets",
+                "Fingers",
+                "Ossos caldo"
+            ]
+        },
+        {
+            "id": 12,
+            "title": "porc",
+            "items": [
+                "Carn picada",
+                "Burguers",
+                "Salsitxes",
+                "Costella",
+                "Llibrets",
+                "Pintxos",
+                "Botifarres"
+            ]
+        },
+        {
+            "id": 13,
+            "title": "vedella",
+            "items": [
+                "Carn picada",
+                "Burguers",
+                "Estofat",
+                "Bistecs",
+                "Fricandó",
+                "Tires per Stir fry"
+            ]
+        },
+        {
+            "id": 14,
+            "title": "menjars preparats",
+            "items": [
+                "Croquetes bacallà",
+                "Empanadilles",
+                "Rollitos primavera"
+            ]
+        },
+        {
+            "id": 15,
+            "title": "especies",
+            "items": [
+                "Sal",
+                "Sal maldon",
+                "Pebre Negre",
+                "Curry",
+                "Pebre vermell",
+                "Cumí",
+                "Canyella",
+                "Orenga",
+                "Jinjebre",
+                "Nou moscada",
+                "Fruits secs (nous, panses, pinyons, cacahuets)",
+                "Fruita Seca (albercos i prunes)",
+                "Altres"
+            ]
+        },
+        {
+            "id": 16,
+            "title": "peix",
+            "items": [
+                "Anxoves",
+                "Salmó fumat",
+                "Altres"
+            ]
+        },
+        {
+            "id": 17,
+            "title": "higiene cuina",
+            "items": [
+                "Sabó plats",
+                "Sabó roba",
+                "Liquid terra",
+                "Ten",
+                "Llegiu detergent",
+                "Vidres",
+                "Paper cuina",
+                "Paper higienic",
+                "Fregall",
+                "Fregall metàl.lic",
+                "Desinfectant",
+                "KH7 antigrasa",
+                "KH7 antical",
+                "Amomiac"
+            ]
+        },
+        {
+            "id": 18,
+            "title": "higiene personal",
+            "items": [
+                "Sabó plats",
+                "Sabó roba",
+                "Liquid terra",
+                "Ten",
+                "Llegiu detergent",
+                "Vidres",
+                "Paper cuina",
+                "Paper higienic",
+                "Fregall",
+                "Fregall metàl.lic",
+                "Desinfectant",
+                "KH7 antigrasa",
+                "KH7 antical",
+                "Amomiac"
+            ]
+        },
+        {
+            "id": 19,
+            "title": "altres",
+            "items": [
+                "Ous",
+                "Cafè",
+                "Tè",
+                "Oli amanida",
+                "Oli fregir",
+                "Vinagre",
+                "Blat de moro",
+                "Farina Blat",
+                "Melmelades",
+                "Xocolata barra",
+                "Xocolata desfeta",
+                "Nocilla",
+                "Sucre",
+                "Cibada",
+                "Cereals xocolata",
+                "Llevat royal",
+                "Mel",
+                "Maple Syrup",
+                "Llet de coco",
+                "Allioli",
+                "Brou peix",
+                "Salsa agridolca",
+                "Ketchup",
+                "Mostassa",
+                "Mayonesa",
+                "Salsa soja",
+                "Tabasc",
+                "Romesco líquid",
+                "Romesco Ferrer",
+                "Salsa caesar",
+                "Pesto",
+                "Patates Chips"
+            ]
+        }
+    ]
+}

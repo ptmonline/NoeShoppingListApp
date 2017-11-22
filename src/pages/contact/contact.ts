@@ -15,7 +15,7 @@ export class ContactPage {
   colorcolumn: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _globalHelper: GlobalHelper) {
-
+    console.log('gettind hello');
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
   }
 

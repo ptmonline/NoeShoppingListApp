@@ -1,24 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Llista
+      Llista de la Compra
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Llista per avui</ion-list-header>
     <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">
-      <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}"><i><b>{{item.titul}}</b></i> {{item.producta}}</ion-item>
+      <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}">
+        <span class="item__titul">{{item.titul}}</span>
+        <span class="item__producta">{{item.producta}}</span>
+      </ion-item>
       <ion-item-options side="right">
         <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">
           BORRAR
         </button>
       </ion-item-options>
-
     </ion-item-sliding>
-
-    <button ion-button (click)="back()">Done</button>
   </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button (click)="back()">Torna a llistat productes</button>
+  </ion-toolbar>
+</ion-footer>

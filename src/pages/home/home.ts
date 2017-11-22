@@ -12,7 +12,8 @@ import { ContactPage } from "../contact/contact";
 })
 export class HomePage {
   public llistatInicial: any;
-  public llistatCompra = [];
+  public llistatCompra: any[];
+  public fuck = 'fuck';
 
   constructor(
     public navCtrl: NavController,
@@ -38,6 +39,9 @@ export class HomePage {
 
   toggleSection(i) {
     if (this.llistatInicial != null) {
+      for(let x = 0; x < this.llistatInicial; x++){
+        !this.llistatInicial.llistat[x].open
+      }
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }
   }

@@ -25678,19 +25678,32 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-contact .verdures {
-  display: block;
+ion-toolbar .button-md {
   width: 100%;
-  background-color: #B2BAC2;
 }
 
-page-contact .fruites {
-  background-color: #F4C9C3;
+ion-app.md [padding] .scroll-content {
+  padding: 0;
+}
+
+.item-md {
+  padding-left: 0 !important;
+}
+
+.item-md .item-inner {
+  padding-left: 15px;
+}
+
+page-contact .item__titul {
+  font-style: italic;
+  margin-right: 40px;
+  font-size: 1.5rem;
 }
 
 page-home .list-header-md {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-variant: all-small-caps;
+  font-weight: bold;
 }
 
 page-home .product-section {
@@ -25702,13 +25715,12 @@ page-home .accordion-list {
 }
 
 page-home .section {
-  background: #fff;
+  background: rgba(229, 229, 201, 0.5);
   color: #000;
 }
 
 page-home .section-active {
-  background: #ffc400;
-  color: #fff;
+  background: #e5e5c9;
 }
 
 page-home .section-active.list-header-md {

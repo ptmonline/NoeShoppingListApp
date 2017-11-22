@@ -1,8 +1,10 @@
+
 page-home {
 
     .list-header-md{
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-variant: all-small-caps;
+        font-weight: bold;
     }
     .product-section{
         margin-bottom: 1rem;
@@ -12,12 +14,12 @@ page-home {
         height: 100%;
     }
     .section {
-        background: #fff;
+        background: rgba(229,229,201, 0.5);
         color: #000;
     }
     .section-active {
-        background: #ffc400;
-        color: #fff;
+        background: #e5e5c9;
+        // color: #fff;
 
         &.list-header-md{
             margin-bottom: 0 !important;
