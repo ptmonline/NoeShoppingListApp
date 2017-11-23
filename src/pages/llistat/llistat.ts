@@ -3,6 +3,7 @@ import { NavController, NavParams, ItemSliding } from 'ionic-angular';
 import _ from "lodash";
 import { GlobalHelper } from "../helpers/global.helper";
 import { ProductesPage } from '../productes/productes';
+import { ArchiuComponent } from '../archiu/archiu';
 
 
 
@@ -15,6 +16,8 @@ export class LlistatPage {
   colorcolumn: string;
   active: boolean;
   archiveDate: any;
+
+  private static stored_archiu: string = 'stored_archiu';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _globalHelper: GlobalHelper) {
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
@@ -39,8 +42,13 @@ export class LlistatPage {
 
   archivar(){
     this.archiveDate = new Date;
-    this.archiveDate = this.archiveDate.toDateString()
+    this.archiveDate = this.archiveDate.toDateString();
+    // StorageApp.set(ArchiuComponent.stored_archiu);
     console.log(this.archiveDate);
+  }
+
+  archiu(){
+    this.navCtrl.push(ArchiuComponent, {llistat: this.compraLlistat, data: this.archiveDate});
   }
 
 }
