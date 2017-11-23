@@ -25694,54 +25694,81 @@ ion-app.md [padding] .scroll-content {
   padding-left: 15px;
 }
 
-page-contact .item__titul {
+[align-center],
+.align-center,
+[txt--center],
+.txt--center {
+  text-align: center;
+}
+
+[pull--right],
+.pull--right {
+  float: right;
+}
+
+[pull--left],
+.pull--left {
+  float: left;
+}
+
+[txt--left],
+.txt--left {
+  text-align: left;
+}
+
+[txt--right],
+.txt--right {
+  text-align: right;
+}
+
+page-llistat .item__titul {
   font-style: italic;
   margin-right: 40px;
   font-size: 1.5rem;
 }
 
-page-home .list-header-md {
+page-productes .list-header-md {
   font-size: 2.2rem;
   font-variant: all-small-caps;
   font-weight: bold;
 }
 
-page-home .product-section {
+page-productes .product-section {
   margin-bottom: 1rem;
 }
 
-page-home .accordion-list {
+page-productes .accordion-list {
   height: 100%;
 }
 
-page-home .section {
+page-productes .section {
   background: rgba(229, 229, 201, 0.5);
   color: #000;
 }
 
-page-home .section-active {
+page-productes .section-active {
   background: #e5e5c9;
 }
 
-page-home .section-active.list-header-md {
+page-productes .section-active.list-header-md {
   margin-bottom: 0 !important;
 }
 
-page-home .child {
+page-productes .child {
   background: #e8e7e6;
   color: #000;
   margin-bottom: 4px;
 }
 
-page-home .child-item {
+page-productes .child-item {
   background: #f3f2f1;
   padding: 10px;
 }
 
-page-home .label {
+page-productes .label {
   margin: 0px;
 }
 
-page-home .list {
+page-productes .list {
   margin-bottom: 4px;
 }

@@ -3,14 +3,14 @@ import { NavController, ItemSliding, NavParams } from 'ionic-angular';
 import { LlistatCompraService } from '../../services/llistat.service';
 import 'rxjs/add/operator/map';
 import { GlobalHelper } from "../helpers/global.helper";
-import { ContactPage } from "../contact/contact";
+import { LlistatPage } from '../llistat/llistat';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-productes',
+  templateUrl: 'productes.html',
   providers: [LlistatCompraService]
 })
-export class HomePage {
+export class ProductesPage {
   public llistatInicial: any;
   public llistatCompra: any[];
 
@@ -46,6 +46,6 @@ export class HomePage {
   }
 
   done() {
-    this.navCtrl.setRoot(ContactPage, this.llistatCompra);
+    this.navCtrl.setRoot(LlistatPage, this.llistatCompra);
   }
 }

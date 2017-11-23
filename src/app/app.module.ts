@@ -3,26 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { LlistatCompraService } from '../services/llistat.service'
 import { GlobalHelper } from "../pages/helpers/global.helper";
-import { MenuComponent } from '../pages/menu/menu.component';
+import { LlistatPage } from '../pages/llistat/llistat';
+import { ProductesPage } from '../pages/productes/productes';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    MenuComponent
-    // TabsPage
+    LlistatPage,
+    ProductesPage
   ],
   imports: [
     BrowserModule,
@@ -39,11 +32,8 @@ import { MenuComponent } from '../pages/menu/menu.component';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    // MenuComponent
-    // TabsPage
+    LlistatPage,
+    ProductesPage
   ],
   providers: [
     StatusBar,

@@ -1,8 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Llista de la Compra
+    <ion-title pull--left>
+      <span>Llista de la Compra</span>
+      <div  class="item__titul">{{archiveDate}}</div>
     </ion-title>
+    <!-- <ion-buttons end> -->
+      <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>
+      <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>
+		<!-- </ion-buttons> -->
   </ion-navbar>
 </ion-header>
 

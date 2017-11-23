@@ -28,3 +28,30 @@ ion-app.md [padding] .scroll-content{
         padding-left: 15px;
     }
 }
+
+[align-center],
+.align-center,
+[txt--center],
+.txt--center {
+  text-align: center;
+}
+
+[pull--right],
+.pull--right {
+  float: right;
+}
+
+[pull--left],
+.pull--left {
+  float: left;
+}
+
+[txt--left],
+.txt--left {
+  text-align: left;
+}
+
+[txt--right],
+.txt--right {
+  text-align: right;
+}

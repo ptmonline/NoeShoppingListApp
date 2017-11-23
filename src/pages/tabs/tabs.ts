@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { LlistatPage } from '../llistat/llistat';
+import { ProductesPage } from '../productes/productes';
 
 @Component({
   templateUrl: 'tabs.html',
-  providers: [HomePage]
+  providers: [ProductesPage]
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = ProductesPage;
+  tab3Root = LlistatPage;
 
   tab2Params: any;
 
-  constructor(private _homePage: HomePage) {
+  constructor() {
   }
 }
