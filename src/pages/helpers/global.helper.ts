@@ -50,12 +50,6 @@ export class GlobalHelper {
             case 8: {
                 return 'rgba(100,255,218,0.5)';
             }
-
-
-
-
-
-
             case 9: {
                 return 'rgba(144,202,249,0.5)';
             }
