@@ -13,7 +13,6 @@ import { ContactPage } from "../contact/contact";
 export class HomePage {
   public llistatInicial: any;
   public llistatCompra: any[];
-  public fuck = 'fuck';
 
   constructor(
     public navCtrl: NavController,

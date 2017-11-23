@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Output, EventEmitter } from "@angular/core";
 import { LlistatCompraService } from "../../services/llistat.service";
 
 @Component({
@@ -9,6 +9,10 @@ import { LlistatCompraService } from "../../services/llistat.service";
 export class MenuComponent{
     public headers: any;
 
+    @Output() 
+    id: EventEmitter<number> = new EventEmitter<number>();
+
+
     constructor(private _llistatCompra: LlistatCompraService,){
         this._llistatCompra.getData().subscribe((data) => {
             this.headers = data;
@@ -17,6 +21,7 @@ export class MenuComponent{
 
     openPage(id: number){
         console.log(id)
+        this.id.emit(id);
     }
     
 }
