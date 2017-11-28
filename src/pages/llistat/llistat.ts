@@ -4,6 +4,8 @@ import _ from "lodash";
 import { GlobalHelper } from "../helpers/global.helper";
 import { ProductesPage } from '../productes/productes';
 import { ArchiuComponent } from '../archiu/archiu';
+import { StorageApp } from '../helpers/storage.helper';
+import { AlertController } from 'ionic-angular';
 
 
 
@@ -16,10 +18,15 @@ export class LlistatPage {
   colorcolumn: string;
   active: boolean;
   archiveDate: any;
+  nomLlistat: string;
 
   private static stored_archiu: string = 'stored_archiu';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _globalHelper: GlobalHelper) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public _globalHelper: GlobalHelper, 
+    public alertCtrl: AlertController) {
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
     (this.compraLlistat.length) ? this.active = true : this.active = false;
   }
@@ -37,18 +44,36 @@ export class LlistatPage {
   close() {
     this.active = false;
     this.compraLlistat = [];
+    StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
     this.back();
   }
 
-  archivar(){
-    this.archiveDate = new Date;
-    this.archiveDate = this.archiveDate.toDateString();
-    // StorageApp.set(ArchiuComponent.stored_archiu);
+  archivar() {
+    let alert = this.alertCtrl.create({
+      title: 'nom llistat',
+      inputs: [{
+        name: 'nom',
+        placeholder: 'nom del llistat'
+      }],
+      buttons: [{
+        text: 'Guardar',
+        handler: data =>{
+          this.nomLlistat = data;
+          console.log(this.nomLlistat);
+        }
+      },{
+        text: 'Cancelar'
+      }]
+    });
+    alert.present();
+    
+    // this.archiveDate = this.archiveDate.toDateString();
+    StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
     console.log(this.archiveDate);
   }
 
-  archiu(){
-    this.navCtrl.push(ArchiuComponent, {llistat: this.compraLlistat, data: this.archiveDate});
+  archiu() {
+    this.navCtrl.push(ArchiuComponent, { llistat: this.compraLlistat, data: this.archiveDate });
   }
 
 }

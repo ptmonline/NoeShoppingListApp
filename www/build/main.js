@@ -62,8 +62,8 @@ var ProductesPage = (function () {
             selector: 'page-productes',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\productes\productes.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Noe Shopping List</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding *ngIf="llistatInicial">\n\n  <div class="content-list">\n\n    <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion-list">\n\n      <ion-list-header (click)="toggleSection(i)" [ngClass]="{\'section-active\': item.open, \'section\': !item.open}">{{item.title}}</ion-list-header>\n\n      <div *ngIf="item.open" class="product-section">\n\n        <ion-item-sliding #slidingItem *ngFor="let ite of item.items">\n\n          <ion-item>{{ite}}</ion-item>\n\n          <ion-item-options side="right">\n\n            <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title, item.id)">\n\n              AFEGIR\n\n            </button>\n\n          </ion-item-options>\n\n        </ion-item-sliding>\n\n      </div>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button (click)="done()">Veura llistat compra</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\productes\productes.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */],
             __WEBPACK_IMPORTED_MODULE_4__helpers_global_helper__["a" /* GlobalHelper */]])
     ], ProductesPage);
@@ -266,6 +266,7 @@ var LlistatCompraService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__productes_productes__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__archiu_archiu__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__helpers_storage_helper__ = __webpack_require__(284);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -281,14 +282,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var LlistatPage = (function () {
-    function LlistatPage(navCtrl, navParams, _globalHelper) {
+    function LlistatPage(navCtrl, navParams, _globalHelper, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this._globalHelper = _globalHelper;
+        this.alertCtrl = alertCtrl;
         this.compraLlistat = __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.orderBy(this.navParams.data, 'id');
         (this.compraLlistat.length) ? this.active = true : this.active = false;
     }
+    LlistatPage_1 = LlistatPage;
     LlistatPage.prototype.deleteItem = function (item, producta, titul, id) {
         var comp = { id: id, titul: titul, producta: producta };
         this.compraLlistat = this._globalHelper.removeItem(comp, this.compraLlistat);
@@ -300,25 +305,44 @@ var LlistatPage = (function () {
     LlistatPage.prototype.close = function () {
         this.active = false;
         this.compraLlistat = [];
+        __WEBPACK_IMPORTED_MODULE_6__helpers_storage_helper__["a" /* StorageApp */].set(LlistatPage_1.stored_archiu, this.compraLlistat);
         this.back();
     };
     LlistatPage.prototype.archivar = function () {
-        this.archiveDate = new Date;
-        this.archiveDate = this.archiveDate.toDateString();
-        // StorageApp.set(ArchiuComponent.stored_archiu);
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'nom llistat',
+            inputs: [{
+                    name: 'nom',
+                    placeholder: 'nom del llistat'
+                }],
+            buttons: [{
+                    text: 'Guardar',
+                    handler: function (data) {
+                        _this.nomLlistat = data;
+                        console.log(_this.nomLlistat);
+                    }
+                }, {
+                    text: 'Cancelar'
+                }]
+        });
+        alert.present();
+        // this.archiveDate = this.archiveDate.toDateString();
+        __WEBPACK_IMPORTED_MODULE_6__helpers_storage_helper__["a" /* StorageApp */].set(LlistatPage_1.stored_archiu, this.compraLlistat);
         console.log(this.archiveDate);
     };
     LlistatPage.prototype.archiu = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__archiu_archiu__["a" /* ArchiuComponent */], { llistat: this.compraLlistat, data: this.archiveDate });
     };
     LlistatPage.stored_archiu = 'stored_archiu';
-    LlistatPage = __decorate([
+    LlistatPage = LlistatPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-llistat',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title pull--left>\n\n      <span>Llistat</span>\n\n      <div  class="item__titul xs">{{archiveDate}}</div>\n\n    </ion-title>\n\n    <!-- <ion-buttons end> -->\n\n      <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>\n\n      <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>\n\n      <button pull--right ion-button color="danger" (tap)="archiu()">Archiu</button>\n\n		<!-- </ion-buttons> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">\n\n      <ion-item [ngStyle]="{\'background-color\':_globalHelper.getColor(item.id)}">\n\n        <span class="item__titul">{{item.titul}}</span>\n\n        <span class="item__producta">{{item.producta}}</span>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">\n\n          BORRAR\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button (click)="back()">Torna a llistat productes</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/
+            selector: 'page-llistat',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title pull--left>\n\n      <span>Llistat</span>\n\n      <!-- <div  class="item__titul xs">{{archiveDate}}</div> -->\n\n    </ion-title>\n\n    <!-- <ion-buttons end> -->\n\n      <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>\n\n      <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>\n\n      <button pull--right ion-button color="danger" (tap)="archiu()">Archiu</button>\n\n		<!-- </ion-buttons> -->\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">\n\n      <ion-item [ngStyle]="{\'background-color\':_globalHelper.getColor(item.id)}">\n\n        <span class="item__titul">{{item.titul}}</span>\n\n        <span class="item__producta">{{item.producta}}</span>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">\n\n          BORRAR\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button (click)="back()">Torna a llistat productes</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], LlistatPage);
     return LlistatPage;
+    var LlistatPage_1, _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=llistat.js.map
@@ -361,7 +385,7 @@ var ArchiuComponent = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'archiu-page',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\archiu\archiu.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Archiu Llistes</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<h1>Test</h1>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\archiu\archiu.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], ArchiuComponent);
     return ArchiuComponent;
     var ArchiuComponent_1;
@@ -434,7 +458,7 @@ var AppModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {
                     menuType: 'push',
                     platforms: {
                         ios: {
@@ -445,7 +469,7 @@ var AppModule = (function () {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_9__pages_llistat_llistat__["a" /* LlistatPage */],
@@ -457,7 +481,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_7__services_llistat_service__["a" /* LlistatCompraService */],
                 __WEBPACK_IMPORTED_MODULE_8__pages_helpers_global_helper__["a" /* GlobalHelper */],
-                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
             ]
         })
     ], AppModule);
@@ -506,10 +530,9 @@ var MyApp = (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\app\app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=app.component.js.map
