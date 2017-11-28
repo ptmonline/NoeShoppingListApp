@@ -9,7 +9,7 @@ export class LlistatCompraService {
    }
 
    getData(): Observable<any>{
-    return this.http.get('../assets/json/data.json').map(data=>{
+    return this.http.get('./assets/json/data.json').map(data=>{
       return data;
     });
    }

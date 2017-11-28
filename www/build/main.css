@@ -25727,6 +25727,15 @@ page-llistat .item__titul {
   font-size: 1.5rem;
 }
 
+page-productes .toolbar-background {
+  border: 2px solid #FFBFD3;
+  padding-top: 15px;
+}
+
+page-productes .toolbar-background [ion-title] {
+  color: pink;
+}
+
 page-productes .list-header-md {
   font-size: 2.2rem;
   font-variant: all-small-caps;

@@ -25,8 +25,8 @@ import { ArchiuComponent } from '../pages/archiu/archiu';
     IonicModule.forRoot(MyApp, {
       menuType: 'push',
       platforms: {
-        ios: {
-          menuType: 'overlay',
+        android: {
+          activator: 'highlight'
         }
       }
     })
