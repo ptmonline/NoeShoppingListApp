@@ -19,14 +19,24 @@ export class LlistatPage {
   active: boolean;
   archiveDate: any;
   nomLlistat: string;
+  nomguardat: string;
 
   private static stored_archiu: string = 'stored_archiu';
+  private static stored_nomllistat: string = 'stored_nomllistat';
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public _globalHelper: GlobalHelper, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public _globalHelper: GlobalHelper,
     public alertCtrl: AlertController) {
+
+    this.nomguardat = StorageApp.get(LlistatPage.stored_nomllistat);
+    console.log('NONO: ',this.nomguardat != null)
+    if (this.nomguardat != null) {
+      this.nomLlistat = this.nomguardat;
+      console.log('THI IS THE NASME', this.nomLlistat)
+    }
+
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
     (this.compraLlistat.length) ? this.active = true : this.active = false;
   }
@@ -44,36 +54,42 @@ export class LlistatPage {
   close() {
     this.active = false;
     this.compraLlistat = [];
+    this.nomguardat = '';
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
+    StorageApp.set(LlistatPage.stored_nomllistat, this.nomguardat);
     this.back();
   }
 
   archivar() {
-    let alert = this.alertCtrl.create({
-      title: 'nom llistat',
-      inputs: [{
-        name: 'nom',
-        placeholder: 'nom del llistat'
-      }],
-      buttons: [{
-        text: 'Guardar',
-        handler: data =>{
-          this.nomLlistat = data;
-          console.log(this.nomLlistat);
-        }
-      },{
-        text: 'Cancelar'
-      }]
-    });
-    alert.present();
-    
+    if(this.nomguardat == null || this.nomguardat == ''){
+      let alert = this.alertCtrl.create({
+        title: 'nom llistat',
+        inputs: [{
+          name: 'nom',
+          placeholder: 'nom del llistat'
+        }],
+        buttons: [{
+          text: 'Guardar',
+          handler: data => {
+            this.nomLlistat = data;
+            StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
+            console.log(this.nomLlistat);
+          }
+        }, {
+          text: 'Cancelar'
+        }]
+      });
+      alert.present();
+    }
+
     // this.archiveDate = this.archiveDate.toDateString();
+    // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
     console.log(this.archiveDate);
   }
 
-  archiu() {
-    this.navCtrl.push(ArchiuComponent, { llistat: this.compraLlistat, data: this.archiveDate });
-  }
+  // archiu() {
+  //   this.navCtrl.push(ArchiuComponent, { llistat: this.compraLlistat, data: this.archiveDate });
+  // }
 
 }

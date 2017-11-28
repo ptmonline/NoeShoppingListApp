@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title pull--left>
-      <span>Llistat</span>
+      <span *ngIf="nomLlistat">Hola {{nomLlistat.nom}}</span>
       <!-- <div  class="item__titul xs">{{archiveDate}}</div> -->
     </ion-title>
     <!-- <ion-buttons end> -->
       <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>
       <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>
-      <button pull--right ion-button color="danger" (tap)="archiu()">Archiu</button>
+      <!-- <button pull--right ion-button color="danger" (tap)="archiu()">Archiu</button> -->
 		<!-- </ion-buttons> -->
   </ion-navbar>
 </ion-header>
