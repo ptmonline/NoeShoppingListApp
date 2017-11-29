@@ -10,14 +10,12 @@ import { LlistatCompraService } from '../services/llistat.service'
 import { GlobalHelper } from "../pages/helpers/global.helper";
 import { LlistatPage } from '../pages/llistat/llistat';
 import { ProductesPage } from '../pages/productes/productes';
-import { ArchiuComponent } from '../pages/archiu/archiu';
 
 @NgModule({
   declarations: [
     MyApp,
     LlistatPage,
-    ProductesPage,
-    ArchiuComponent
+    ProductesPage
   ],
   imports: [
     BrowserModule,
@@ -35,8 +33,7 @@ import { ArchiuComponent } from '../pages/archiu/archiu';
   entryComponents: [
     MyApp,
     LlistatPage,
-    ProductesPage,
-    ArchiuComponent
+    ProductesPage
   ],
   providers: [
     StatusBar,

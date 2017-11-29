@@ -3,7 +3,6 @@ import { NavController, NavParams, ItemSliding } from 'ionic-angular';
 import _ from "lodash";
 import { GlobalHelper } from "../helpers/global.helper";
 import { ProductesPage } from '../productes/productes';
-import { ArchiuComponent } from '../archiu/archiu';
 import { StorageApp } from '../helpers/storage.helper';
 import { AlertController } from 'ionic-angular';
 
