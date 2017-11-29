@@ -30,10 +30,9 @@ export class LlistatPage {
     public alertCtrl: AlertController) {
 
     this.nomguardat = StorageApp.get(LlistatPage.stored_nomllistat);
-    console.log('NONO: ',this.nomguardat != null)
+
     if (this.nomguardat != null) {
       this.nomLlistat = this.nomguardat;
-      console.log('THI IS THE NASME', this.nomLlistat)
     }
 
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
@@ -60,7 +59,7 @@ export class LlistatPage {
   }
 
   archivar() {
-    if(this.nomguardat == null || this.nomguardat == ''){
+    if (this.nomguardat == null || this.nomguardat == '') {
       let alert = this.alertCtrl.create({
         title: 'nom llistat',
         inputs: [{
@@ -86,9 +85,5 @@ export class LlistatPage {
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
     console.log(this.archiveDate);
   }
-
-  // archiu() {
-  //   this.navCtrl.push(ArchiuComponent, { llistat: this.compraLlistat, data: this.archiveDate });
-  // }
 
 }
