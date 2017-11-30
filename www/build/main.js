@@ -352,7 +352,7 @@ var LlistatPage = (function () {
     LlistatPage.prototype.archivar = function () {
         var _this = this;
         if (this.nomguardat == null || this.nomguardat == '') {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'nom llistat',
                 inputs: [{
                         name: 'nom',
@@ -369,26 +369,29 @@ var LlistatPage = (function () {
                         text: 'Cancelar'
                     }]
             });
-            alert_1.present();
+            alert.present();
         }
         // this.archiveDate = this.archiveDate.toDateString();
         // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
         __WEBPACK_IMPORTED_MODULE_5__helpers_storage_helper__["a" /* StorageApp */].set(LlistatPage_1.stored_archiu, this.compraLlistat);
         console.log(this.archiveDate);
     };
+    LlistatPage.prototype.blankProduct = function (event) {
+        var _blank = event.target.children;
+        __WEBPACK_IMPORTED_MODULE_2_lodash___default.a.filter(_blank, function (x) {
+            x.classList.toggle('shopped');
+        });
+    };
     LlistatPage.stored_archiu = 'stored_archiu';
     LlistatPage.stored_nomllistat = 'stored_nomllistat';
     LlistatPage = LlistatPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-llistat',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title pull--left>\n\n      <span *ngIf="nomLlistat">Hola {{nomLlistat.nom}}</span>\n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">\n\n      <ion-item [ngStyle]="{\'background-color\':_globalHelper.getColor(item.id)}">\n\n        <span class="item__titul">{{item.titul}}</span>\n\n        <span class="item__producta">{{item.producta}}</span>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">\n\n          BORRAR\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button (click)="back()">Torna a productes</button>\n\n    <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>\n\n    <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/
+            selector: 'page-llistat',template:/*ion-inline-start:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title pull--left>\n\n      <span *ngIf="nomLlistat">Hola {{nomLlistat.nom}}</span>\n\n    </ion-title>\n\n    \n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">\n\n      <ion-item [ngStyle]="{\'background-color\':_globalHelper.getColor(item.id)}" (click)="blankProduct($event)">\n\n        <span class="item__titul">{{item.titul}}</span>\n\n        <span class="item__producta">{{item.producta}}</span>\n\n      </ion-item>\n\n      <ion-item-options side="right">\n\n        <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">\n\n          BORRAR\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button (click)="back()">Torna a productes</button>\n\n    <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>\n\n    <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\ce9\Documents\personal\NoeShoppingListApp\src\pages\llistat\llistat.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], LlistatPage);
     return LlistatPage;
-    var LlistatPage_1;
+    var LlistatPage_1, _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=llistat.js.map

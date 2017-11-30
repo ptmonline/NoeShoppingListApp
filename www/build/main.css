@@ -25727,6 +25727,10 @@ page-llistat .item__titul {
   font-size: 1.5rem;
 }
 
+page-llistat .item__titul.shopped {
+  text-decoration: line-through;
+}
+
 page-productes .toolbar-title-md {
   color: #d87789;
   font-family: Helvetica;

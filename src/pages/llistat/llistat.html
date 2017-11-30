@@ -10,7 +10,7 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">
-      <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}">
+      <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}" (click)="blankProduct($event)">
         <span class="item__titul">{{item.titul}}</span>
         <span class="item__producta">{{item.producta}}</span>
       </ion-item>

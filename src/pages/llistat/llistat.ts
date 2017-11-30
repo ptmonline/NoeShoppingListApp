@@ -86,4 +86,11 @@ export class LlistatPage {
     console.log(this.archiveDate);
   }
 
+  blankProduct(event){
+    let _blank = event.target.children;
+    _.filter(_blank, (x)=>{
+      x.classList.toggle('shopped');
+    })
+  }
+
 }
