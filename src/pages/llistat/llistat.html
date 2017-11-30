@@ -3,8 +3,7 @@
     <ion-title pull--left>
       <span *ngIf="nomLlistat">Hola {{nomLlistat.nom}}</span>
     </ion-title>
-    <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>
-    <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>
+    
   </ion-navbar>
 </ion-header>
 
@@ -25,6 +24,8 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <button ion-button (click)="back()">Torna a llistat productes</button>
+    <button ion-button (click)="back()">Torna a productes</button>
+    <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>
+    <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>
   </ion-toolbar>
 </ion-footer>

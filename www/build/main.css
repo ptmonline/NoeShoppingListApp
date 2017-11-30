@@ -25679,7 +25679,7 @@ ion-navbar.toolbar {
 }
 
 ion-toolbar .button-md {
-  width: 100%;
+  margin: 0;
 }
 
 ion-app.md [padding] .scroll-content {
@@ -25727,8 +25727,14 @@ page-llistat .item__titul {
   font-size: 1.5rem;
 }
 
+page-productes .toolbar-title-md {
+  color: #d87789;
+  font-family: Helvetica;
+  font-size: 1.5em;
+  font-style: italic;
+}
+
 page-productes .toolbar-background {
-  border: 2px solid #FFBFD3;
   padding-top: 15px;
 }
 

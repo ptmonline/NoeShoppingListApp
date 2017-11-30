@@ -1,7 +1,13 @@
 
 page-productes {
+    .toolbar-title-md{
+        color: rgb(216, 119, 137);
+        font-family: Helvetica;
+        font-size: 1.5em;
+        font-style: italic;
+    }
     .toolbar-background{
-        border: 2px solid #FFBFD3;
+        // border: 2px solid #FFBFD3;
         padding-top: 15px;
         [ion-title] {
             color: pink;
