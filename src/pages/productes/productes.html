@@ -8,10 +8,10 @@
 <ion-content padding *ngIf="llistatInicial">
   <div class="content-list">
     <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion-list">
-      <ion-list-header (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">{{item.title}}</ion-list-header>
+      <ion-list-header (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}"><span class="item__header">{{item.title}}</span></ion-list-header>
       <div *ngIf="item.open" class="product-section">
         <ion-item-sliding #slidingItem *ngFor="let ite of item.items">
-          <ion-item>{{ite}}</ion-item>
+          <ion-item><span class="item__producta">{{ite}}</span></ion-item>
           <ion-item-options side="right">
             <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title, item.id)">
               AFEGIR

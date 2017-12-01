@@ -79,18 +79,11 @@ export class LlistatPage {
       });
       alert.present();
     }
-
+    // this.archiveDate = new Date();
     // this.archiveDate = this.archiveDate.toDateString();
     // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
     console.log(this.archiveDate);
-  }
-
-  blankProduct(event){
-    let _blank = event.target.children;
-    _.filter(_blank, (x)=>{
-      x.classList.toggle('shopped');
-    })
   }
 
 }
