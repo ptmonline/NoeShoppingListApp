@@ -72,8 +72,8 @@ export class ProductesPage {
 
   toggleSection(i) {
     if (this.llistatInicial != null) {
-      for (let x = 0; x < this.llistatInicial; x++) {
-        !this.llistatInicial.llistat[x].open
+      for (let x = 0; x < this.llistatInicial.llistat.length; x++) {
+        this.llistatInicial.llistat[x].open = false;
       }
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }

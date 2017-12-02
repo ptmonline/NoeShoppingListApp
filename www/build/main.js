@@ -81,10 +81,12 @@ var ProductesPage = (function () {
     };
     ProductesPage.prototype.toggleSection = function (i) {
         if (this.llistatInicial != null) {
-            for (var x = 0; x < this.llistatInicial; x++) {
-                !this.llistatInicial.llistat[x].open;
+            for (var x = 0; x < this.llistatInicial.llistat.length; x++) {
+                this.llistatInicial.llistat[x].open = false;
+                console.log(this.llistatInicial.llistat[x].open);
             }
             this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
+            console.log(this.llistatInicial.llistat[i].open);
         }
     };
     ProductesPage.prototype.done = function () {
@@ -97,14 +99,10 @@ var ProductesPage = (function () {
             selector: 'page-productes',template:/*ion-inline-start:"/home/pau/Republica/NoeShoppingListApp/src/pages/productes/productes.html"*/'<ion-header>\n  <ion-navbar>\n    <div class="toolbar-background txt--center">\n      <ion-title>Noe Shopping List</ion-title>\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding *ngIf="llistatInicial">\n  <div class="content-list">\n    <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion-list">\n      <ion-list-header (click)="toggleSection(i)" [ngClass]="{\'section-active\': item.open, \'section\': !item.open}" class="txt--center"><span class="item__header">{{item.title}}</span></ion-list-header>\n      <div *ngIf="item.open" class="product-section">\n        <ion-item-sliding #slidingItem *ngFor="let ite of item.items">\n          <ion-item><span class="item__producta">{{ite}}</span></ion-item>\n          <ion-item-options side="right">\n            <button ion-button expandable (click)="saveItem(slidingItem, ite, item.title, item.id)">\n              AFEGIR\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      </div>\n    </ion-list>\n  </div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button (click)="done()">Veura llistat compra</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/home/pau/Republica/NoeShoppingListApp/src/pages/productes/productes.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_4__helpers_global_helper__["a" /* GlobalHelper */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__helpers_global_helper__["a" /* GlobalHelper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__helpers_global_helper__["a" /* GlobalHelper */]) === "function" && _e || Object])
     ], ProductesPage);
     return ProductesPage;
-    var ProductesPage_1;
+    var ProductesPage_1, _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=productes.js.map
