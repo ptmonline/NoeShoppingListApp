@@ -25734,6 +25734,12 @@ ion-app.md [padding] .scroll-content {
   font-weight: 300;
 }
 
+.titul-compra {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
 page-productes .toolbar-title-md {
   font-family: Helvetica;
   font-size: 1.8em;
@@ -25792,4 +25798,10 @@ page-productes .label {
 
 page-productes .list {
   margin-bottom: 4px;
+}
+
+page-productes .btn-go {
+  font-size: 1.7em;
+  text-transform: uppercase;
+  text-align: center;
 }
