@@ -25734,17 +25734,11 @@ ion-app.md [padding] .scroll-content {
   font-weight: 300;
 }
 
-.item__header {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
 page-productes .toolbar-title-md {
-  color: #d87789;
   font-family: Helvetica;
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.8em;
+  font-variant: 600;
+  text-transform: uppercase;
 }
 
 page-productes .toolbar-background {
@@ -25756,9 +25750,8 @@ page-productes .toolbar-background [ion-title] {
 }
 
 page-productes .list-header-md {
-  font-size: 2.2rem;
-  font-variant: all-small-caps;
-  font-weight: bold;
+  font-size: 1.7em;
+  text-transform: uppercase;
 }
 
 page-productes .product-section {
