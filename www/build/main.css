@@ -25743,38 +25743,34 @@ ion-app.md [padding] .scroll-content {
 }
 
 .titul-compra {
-  font-size: 1.8em;
+  font-size: 2.5rem;
   text-transform: uppercase;
   font-style: italic;
 }
 
-page-productes .toolbar-title-md {
+.toolbar-title-md {
   font-family: Helvetica;
-  font-size: 1.8em;
+  font-size: 2.5rem;
   font-variant: 600;
   text-transform: uppercase;
 }
 
-page-productes .toolbar-background {
+.toolbar-background {
   padding-top: 15px;
 }
 
-page-productes .toolbar-background [ion-title] {
-  color: pink;
-}
-
-page-productes .accordion {
+.accordion {
   height: 100%;
 }
 
-page-productes .accordion__header {
-  font-size: 1.7em;
+.accordion__header {
+  font-size: 2.5rem;
   text-transform: uppercase;
   background: rgba(229, 229, 201, 0.5);
   color: #000;
 }
 
-page-productes .accordion__header--active {
+.accordion__header--active {
   background: #e5e5c9;
   margin-bottom: 0 !important;
   font-size: 2.5rem;
@@ -25782,17 +25778,21 @@ page-productes .accordion__header--active {
   font-weight: 300;
 }
 
-page-productes .accordion__content {
+.accordion__content {
   margin-bottom: 1rem;
 }
 
-page-productes .accordion__content span {
+.accordion__content span {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 300;
 }
 
-page-productes .btn-go {
+.accordion__content .button-inner {
+  font-size: 1.4rem;
+}
+
+.btn-go {
   font-size: 1.7em;
   text-transform: uppercase;
   text-align: center;

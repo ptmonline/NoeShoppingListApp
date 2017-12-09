@@ -1,24 +1,17 @@
-
-page-productes {
-    .toolbar-title-md{
+.toolbar-title-md{
         font-family: Helvetica;
-        font-size: 1.8em;
+        font-size: 2.5rem;
         font-variant: 600;
         text-transform: uppercase;
     }
     .toolbar-background{
-        // border: 2px solid #FFBFD3;
         padding-top: 15px;
-        [ion-title] {
-            color: pink;
-        }
     }
     .accordion{
-        // background: color($colors, light);
         height: 100%;
 
         &__header{
-            font-size: 1.7em;
+            font-size: 2.5rem;
             text-transform: uppercase;
             background: rgba(229,229,201, 0.5);
             color: #000;
@@ -40,6 +33,10 @@ page-productes {
                 text-transform: uppercase;
                 font-weight: 300;
             }
+
+            .button-inner{
+                font-size: 1.4rem;
+            }
         }
     }
 
@@ -49,4 +46,4 @@ page-productes {
         text-transform: uppercase;
         text-align: center;
     }
-}
+
