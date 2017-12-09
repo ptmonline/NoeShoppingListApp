@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title pull--left>
-      <span class="titul-compra" *ngIf="nomLlistat">{{nomLlistat.nom}}</span>
+      <span class="item--header" *ngIf="nomLlistat">{{nomLlistat.nom}}</span>
     </ion-title>
     
   </ion-navbar>
@@ -11,8 +11,8 @@
   <ion-list>
     <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">
       <ion-item [ngStyle]="{'background-color':_globalHelper.getColor(item.id)}">
-        <span class="item__titul">{{item.titul}}</span>
-        <span class="item__producta">{{item.producta}}</span>
+        <span class="item--titul">{{item.titul}}</span>
+        <span class="item--producta">{{item.producta}}</span>
       </ion-item>
       <ion-item-options side="right">
         <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">

@@ -25729,23 +25729,24 @@ ion-app.md [padding] .scroll-content {
   margin-bottom: 4px;
 }
 
-.item__titul {
+.base-font-common, .item--header, .item--producta {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.item--header {
+  font-style: italic;
+}
+
+.item--titul {
   font-style: italic;
   margin-right: 40px;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.item__producta {
-  font-size: 2.5rem;
-  text-transform: uppercase;
+.item--producta {
   font-weight: 300;
-}
-
-.titul-compra {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-style: italic;
 }
 
 .toolbar-title-md {

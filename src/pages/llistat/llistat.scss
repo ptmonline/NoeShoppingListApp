@@ -1,20 +1,26 @@
 
-    .item__titul{
-        font-style: italic;
-        margin-right: 40px;
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-    .item__producta{
-        font-size: 2.5rem;
-        text-transform: uppercase;
-        font-weight: 300;
-    }
-
-    .titul-compra{
+    .base-font-common{
         font-size:2.5rem;
         text-transform: uppercase;
-        font-style: italic;
+    }
+    .item {
+
+        &--header{
+            @extend .base-font-common;
+            font-style: italic;
+        }
+        
+        &--titul{
+            font-style: italic;
+            margin-right: 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        &--producta{
+            @extend .base-font-common;
+            font-weight: 300;
+        }
     }
 
 
