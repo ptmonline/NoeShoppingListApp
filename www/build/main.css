@@ -25721,6 +25721,14 @@ ion-app.md [padding] .scroll-content {
   text-align: right;
 }
 
+.label {
+  margin: 0px;
+}
+
+.list {
+  margin-bottom: 4px;
+}
+
 .item__titul {
   font-style: italic;
   margin-right: 40px;
@@ -25755,49 +25763,33 @@ page-productes .toolbar-background [ion-title] {
   color: pink;
 }
 
-page-productes .list-header-md {
-  font-size: 1.7em;
-  text-transform: uppercase;
-}
-
-page-productes .product-section {
-  margin-bottom: 1rem;
-}
-
-page-productes .accordion-list {
+page-productes .accordion {
   height: 100%;
 }
 
-page-productes .section {
+page-productes .accordion__header {
+  font-size: 1.7em;
+  text-transform: uppercase;
   background: rgba(229, 229, 201, 0.5);
   color: #000;
 }
 
-page-productes .section-active {
+page-productes .accordion__header--active {
   background: #e5e5c9;
-}
-
-page-productes .section-active.list-header-md {
   margin-bottom: 0 !important;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
-page-productes .child {
-  background: #e8e7e6;
-  color: #000;
-  margin-bottom: 4px;
+page-productes .accordion__content {
+  margin-bottom: 1rem;
 }
 
-page-productes .child-item {
-  background: #f3f2f1;
-  padding: 10px;
-}
-
-page-productes .label {
-  margin: 0px;
-}
-
-page-productes .list {
-  margin-bottom: 4px;
+page-productes .accordion__content span {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 page-productes .btn-go {
