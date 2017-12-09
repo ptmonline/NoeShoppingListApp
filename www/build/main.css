@@ -25729,7 +25729,7 @@ ion-app.md [padding] .scroll-content {
   margin-bottom: 4px;
 }
 
-.base-font-common, .item--header, .item--producta {
+.base-font-common, .item--header, .item--producta, .toolbar-title-md, .accordion__header, .accordion__header--active, .accordion__content span {
   font-size: 2.5rem;
   text-transform: uppercase;
 }
@@ -25749,11 +25749,14 @@ ion-app.md [padding] .scroll-content {
   font-weight: 300;
 }
 
+.base-font-common, .item--header, .item--producta, .toolbar-title-md, .accordion__header, .accordion__header--active, .accordion__content span {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
 .toolbar-title-md {
   font-family: Helvetica;
-  font-size: 2.5rem;
   font-variant: 600;
-  text-transform: uppercase;
 }
 
 .toolbar-background {
@@ -25765,8 +25768,6 @@ ion-app.md [padding] .scroll-content {
 }
 
 .accordion__header {
-  font-size: 2.5rem;
-  text-transform: uppercase;
   background: rgba(229, 229, 201, 0.5);
   color: #000;
 }
@@ -25774,8 +25775,6 @@ ion-app.md [padding] .scroll-content {
 .accordion__header--active {
   background: #e5e5c9;
   margin-bottom: 0 !important;
-  font-size: 2.5rem;
-  text-transform: uppercase;
   font-weight: 300;
 }
 
@@ -25784,8 +25783,6 @@ ion-app.md [padding] .scroll-content {
 }
 
 .accordion__content span {
-  font-size: 2.5rem;
-  text-transform: uppercase;
   font-weight: 300;
 }
 

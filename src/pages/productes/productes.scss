@@ -1,49 +1,49 @@
+.base-font-common{
+    font-size:2.5rem;
+    text-transform: uppercase;
+}
 .toolbar-title-md{
-        font-family: Helvetica;
-        font-size: 2.5rem;
-        font-variant: 600;
-        text-transform: uppercase;
-    }
-    .toolbar-background{
-        padding-top: 15px;
-    }
-    .accordion{
-        height: 100%;
+    font-family: Helvetica;
+    @extend .base-font-common;
+    font-variant: 600;
+}
+.toolbar-background{
+    padding-top: 15px;
+}
+.accordion{
+    height: 100%;
 
-        &__header{
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            background: rgba(229,229,201, 0.5);
-            color: #000;
+    &__header{
+        @extend .base-font-common;
+        background: rgba(229,229,201, 0.5);
+        color: #000;
 
-            &--active{
-                background: #e5e5c9;
-                margin-bottom: 0 !important;
-                font-size: 2.5rem;
-                text-transform: uppercase;
-                font-weight: 300;
-            }
-        }
-
-        &__content{
-            margin-bottom: 1rem;
-
-            span{
-                font-size: 2.5rem;
-                text-transform: uppercase;
-                font-weight: 300;
-            }
-
-            .button-inner{
-                font-size: 1.4rem;
-            }
+        &--active{
+            background: #e5e5c9;
+            margin-bottom: 0 !important;
+            @extend .base-font-common;
+            font-weight: 300;
         }
     }
 
+    &__content{
+        margin-bottom: 1rem;
 
-    .btn-go{
-        font-size:1.7em;
-        text-transform: uppercase;
-        text-align: center;
+        span{
+            @extend .base-font-common;
+            font-weight: 300;
+        }
+
+        .button-inner{
+            font-size: 1.4rem;
+        }
     }
+}
+
+
+.btn-go{
+    font-size:1.7em;
+    text-transform: uppercase;
+    text-align: center;
+}
 
