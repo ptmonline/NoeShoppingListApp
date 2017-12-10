@@ -97,8 +97,8 @@ var ProductesPage = (function () {
             selector: 'page-productes',template:/*ion-inline-start:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/pages/productes/productes.html"*/'<ion-header>\n  <ion-navbar>\n    <div class="toolbar-background txt--center">\n      <ion-title>Noe Shopping List</ion-title>\n    </div>\n  </ion-navbar>\n</ion-header>\n<ion-content padding *ngIf="llistatInicial">\n  <div class="content-list">\n    <ion-list *ngFor="let item of llistatInicial.llistat; let i = index" class="accordion">\n      <ion-list-header (tap)="toggleSection(i)" [ngClass]="{\'accordion__header accordion__header--active\': item.open, \'accordion__header\': !item.open}" class="txt--center"><span>{{item.title}}</span></ion-list-header>\n      <div *ngIf="item.open" class="accordion__content">\n        <ion-item-sliding #slidingItem *ngFor="let ite of item.items">\n          <ion-item><span>{{ite}}</span></ion-item>\n          <ion-item-options side="right">\n            <button ion-button expandable (tap)="saveItem(slidingItem, ite, item.title, item.id)">\n              AFEGIR\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      </div>\n    </ion-list>\n  </div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <div class="btn-go" (tap)="done()">[ Veura llistat compra ]</div>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/pages/productes/productes.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__services_llistat_service__["a" /* LlistatCompraService */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_4__helpers_global_helper__["a" /* GlobalHelper */]])
@@ -117,15 +117,21 @@ var ProductesPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GlobalHelper; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var GlobalHelper = (function () {
-    function GlobalHelper() {
+    function GlobalHelper(loadingCtrl) {
+        this.loadingCtrl = loadingCtrl;
     }
     GlobalHelper.prototype.checkUniq = function (obj, list) {
         var i;
@@ -206,10 +212,25 @@ var GlobalHelper = (function () {
             }
         }
     };
+    GlobalHelper.prototype.presentLoadingCustom = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'bubbles',
+            content: 'guardant',
+            cssClass: 'llistat__spinner',
+            showBackdrop: false,
+            duration: 1000
+        });
+        loading.onDidDismiss(function () {
+            console.log('Dismissed loading');
+        });
+        loading.present();
+    };
     GlobalHelper = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _a || Object])
     ], GlobalHelper);
     return GlobalHelper;
+    var _a;
 }());
 
 //# sourceMappingURL=global.helper.js.map
@@ -303,7 +324,6 @@ var LlistatCompraService = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__productes_productes__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__helpers_storage_helper__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular_components_loading_loading_controller__ = __webpack_require__(76);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -320,12 +340,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var LlistatPage = (function () {
-    function LlistatPage(navCtrl, navParams, loadingCtrl, _globalHelper, alertCtrl) {
+    function LlistatPage(navCtrl, navParams, _globalHelper, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
         this._globalHelper = _globalHelper;
         this.alertCtrl = alertCtrl;
         this.nomguardat = __WEBPACK_IMPORTED_MODULE_5__helpers_storage_helper__["a" /* StorageApp */].get(LlistatPage_1.stored_nomllistat);
@@ -378,20 +396,7 @@ var LlistatPage = (function () {
         // this.archiveDate = this.archiveDate.toDateString();
         // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
         __WEBPACK_IMPORTED_MODULE_5__helpers_storage_helper__["a" /* StorageApp */].set(LlistatPage_1.stored_archiu, this.compraLlistat);
-        this.presentLoadingCustom();
-    };
-    LlistatPage.prototype.presentLoadingCustom = function () {
-        var loading = this.loadingCtrl.create({
-            spinner: 'bubbles',
-            content: 'guardant',
-            cssClass: 'llistat__spinner',
-            showBackdrop: false,
-            duration: 50000
-        });
-        loading.onDidDismiss(function () {
-            console.log('Dismissed loading');
-        });
-        loading.present();
+        this._globalHelper.presentLoadingCustom();
     };
     LlistatPage.stored_archiu = 'stored_archiu';
     LlistatPage.stored_nomllistat = 'stored_nomllistat';
@@ -399,10 +404,10 @@ var LlistatPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-llistat',template:/*ion-inline-start:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/pages/llistat/llistat.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title pull--left>\n      <span class="item--header" *ngIf="nomLlistat">{{nomLlistat.nom}}</span>\n    </ion-title>\n    \n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item-sliding #slidingItem *ngFor="let item of compraLlistat">\n      <ion-item [ngStyle]="{\'background-color\':_globalHelper.getColor(item.id)}">\n        <span class="item--titul">{{item.titul}}</span>\n        <span class="item--producta">{{item.producta}}</span>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button expandable (click)="deleteItem(slidingItem, item.producta, item.titul, item.id)">\n          BORRAR\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button (click)="back()">productes</button>\n    <button pull--right ion-button color="dark" (tap)="close()" *ngIf="active">borrar</button>\n    <button pull--right ion-button color="secondary" (tap)="archivar()">guardar</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/pages/llistat/llistat.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular_components_loading_loading_controller__["a" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular_components_loading_loading_controller__["a" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__helpers_global_helper__["a" /* GlobalHelper */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], LlistatPage);
     return LlistatPage;
-    var LlistatPage_1, _a, _b, _c, _d, _e;
+    var LlistatPage_1, _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=llistat.js.map
@@ -615,7 +620,7 @@ var MyApp = (function () {
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/joanpautorres/Documents/Republica/NoeShoppingListApp/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
 }());

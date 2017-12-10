@@ -1,8 +1,11 @@
 import { Injectable } from "@angular/core";
+import { LoadingController } from "ionic-angular";
 
 @Injectable()
 
 export class GlobalHelper {
+
+    constructor(public loadingCtrl: LoadingController){}
 
     checkUniq(obj, list) {
         let i;
@@ -85,4 +88,19 @@ export class GlobalHelper {
             }
         }
     }
+    presentLoadingCustom() {
+        let loading = this.loadingCtrl.create({
+          spinner: 'bubbles',
+          content: 'guardant',
+          cssClass: 'llistat__spinner',
+          showBackdrop: false,
+          duration: 1000
+        });
+      
+        loading.onDidDismiss(() => {
+          console.log('Dismissed loading');
+        });
+      
+        loading.present();
+      }
 }
