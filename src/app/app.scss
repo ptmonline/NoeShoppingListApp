@@ -22,6 +22,12 @@ ion-toolbar{
 ion-app.md [padding] .scroll-content{
     padding: 0;
 }
+
+.base-font-common{
+  font-size:2.5rem;
+  text-transform: uppercase;
+}
+
 .item-md{
     padding-left: 0 !important;
     .item-inner{

@@ -1,9 +1,5 @@
 
-    .base-font-common{
-        font-size:2.5rem;
-        text-transform: uppercase;
-    }
-    .item {
+.item {
 
         &--header{
             @extend .base-font-common;

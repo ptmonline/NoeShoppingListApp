@@ -5,6 +5,7 @@ import { GlobalHelper } from "../helpers/global.helper";
 import { ProductesPage } from '../productes/productes';
 import { StorageApp } from '../helpers/storage.helper';
 import { AlertController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 
 
 
@@ -26,6 +27,7 @@ export class LlistatPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public loadingCtrl: LoadingController,
     public _globalHelper: GlobalHelper,
     public alertCtrl: AlertController) {
 
@@ -83,7 +85,24 @@ export class LlistatPage {
     // this.archiveDate = this.archiveDate.toDateString();
     // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
-    console.log(this.archiveDate);
+    this.presentLoadingCustom();
+  }
+
+  presentLoadingCustom() {
+    let loading = this.loadingCtrl.create({
+      spinner: 'bubbles',
+      content: `
+        <div class="custom-spinner-container">
+          <div class="custom-spinner-box"></div>
+        </div>`,
+      duration: 5000
+    });
+  
+    loading.onDidDismiss(() => {
+      console.log('Dismissed loading');
+    });
+  
+    loading.present();
   }
 
 }
