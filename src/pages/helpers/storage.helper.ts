@@ -1,8 +1,8 @@
 export class StorageApp {
     
         static getStorage(isPersistent: boolean): Storage {
-            if (isPersistent == true) return localStorage
-            else return sessionStorage
+            if (isPersistent == true) return sessionStorage
+            else return localStorage
         }
     
         public static set(key: string, data: any, isPersistent?: boolean) {
