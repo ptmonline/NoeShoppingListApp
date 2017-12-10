@@ -19,13 +19,17 @@ ion-toolbar{
         margin: 0;
     }
 }
+.toolbar-md{
+  min-height: 29px;
+}
 ion-app.md [padding] .scroll-content{
     padding: 0;
 }
 
 .base-font-common{
-  font-size:2.5rem;
+  font-size:3rem;
   text-transform: uppercase;
+  letter-spacing: -2px;
 }
 
 .item-md{

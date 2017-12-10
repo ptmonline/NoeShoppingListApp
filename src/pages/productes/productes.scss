@@ -1,29 +1,36 @@
 .toolbar-title-md{
     font-family: Helvetica;
     @extend .base-font-common;
-    font-variant: 600;
+    font-size:2.5rem;
+    font-weight:bold;
+    letter-spacing: -2px;
 }
 .toolbar-background{
-    padding-top: 15px;
+    // padding-top: 15px;
 }
 .accordion{
     height: 100%;
 
     &__header{
         @extend .base-font-common;
-        background: rgba(229,229,201, 0.5);
+        // background: rgba(229,229,201, 0.5);
         color: #000;
+        float:right;
+        margin-right: 5%;
 
         &--active{
             background: #e5e5c9;
+            background: rgba(0,0,0, 0.9);
             margin-bottom: 0 !important;
             @extend .base-font-common;
+            color:white;
             font-weight: 300;
         }
     }
 
     &__content{
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
+        border-bottom: 5px solid black;
 
         span{
             @extend .base-font-common;
