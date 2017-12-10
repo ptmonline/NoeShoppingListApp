@@ -91,11 +91,10 @@ export class LlistatPage {
   presentLoadingCustom() {
     let loading = this.loadingCtrl.create({
       spinner: 'bubbles',
-      content: `
-        <div class="custom-spinner-container">
-          <div class="custom-spinner-box"></div>
-        </div>`,
-      duration: 5000
+      content: 'guardant',
+      cssClass: 'llistat__spinner',
+      showBackdrop: false,
+      duration: 50000
     });
   
     loading.onDidDismiss(() => {

@@ -18,5 +18,15 @@
             font-weight: 300;
         }
     }
+.llistat__spinner{
+    .loading-wrapper{
+        transform: scale(1.2) !important;
+        width: 100%;
 
+        .loading-content{
+            color: black;
+            text-transform: uppercase;
+        }
+    }
+}
 

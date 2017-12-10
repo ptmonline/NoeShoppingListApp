@@ -25749,6 +25749,17 @@ ion-app.md [padding] .scroll-content {
   font-weight: 300;
 }
 
+.llistat__spinner .loading-wrapper {
+  -webkit-transform: scale(1.2) !important;
+  transform: scale(1.2) !important;
+  width: 100%;
+}
+
+.llistat__spinner .loading-wrapper .loading-content {
+  color: black;
+  text-transform: uppercase;
+}
+
 .toolbar-title-md {
   font-family: Helvetica;
   font-variant: 600;
