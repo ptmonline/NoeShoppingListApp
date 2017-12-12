@@ -25682,6 +25682,10 @@ ion-toolbar .button-md {
   margin: 0;
 }
 
+.footer .toolbar-background-md {
+  color: #00a86b;
+}
+
 .toolbar-md {
   min-height: 29px;
 }
@@ -25768,8 +25772,8 @@ ion-app.md [padding] .scroll-content {
 .toolbar-title-md {
   font-family: Helvetica;
   font-size: 2.5rem;
-  font-weight: bold;
   letter-spacing: -2px;
+  text-align: right;
 }
 
 .accordion {
@@ -25784,7 +25788,7 @@ ion-app.md [padding] .scroll-content {
 
 .accordion__header--active {
   background: #e5e5c9;
-  background: rgba(0, 0, 0, 0.9);
+  background-color: #01796f;
   margin-bottom: 0 !important;
   color: white;
   font-weight: 300;
@@ -25792,7 +25796,7 @@ ion-app.md [padding] .scroll-content {
 
 .accordion__content {
   margin-bottom: 1.2rem;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid #01796f;
 }
 
 .accordion__content span {
@@ -25807,4 +25811,7 @@ ion-app.md [padding] .scroll-content {
   font-size: 1.7em;
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: -1.5px;
+  font-weight: bolder;
+  color: #01796f;
 }
