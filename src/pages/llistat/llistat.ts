@@ -71,6 +71,7 @@ export class LlistatPage {
           handler: data => {
             this.nomLlistat = data;
             StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
+            this._globalHelper.presentLoadingCustom();
             console.log(this.nomLlistat);
           }
         }, {
@@ -83,7 +84,6 @@ export class LlistatPage {
     // this.archiveDate = this.archiveDate.toDateString();
     // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
-    this._globalHelper.presentLoadingCustom();
   }
 
 }
