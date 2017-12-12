@@ -11,6 +11,7 @@ import { StorageApp } from '../helpers/storage.helper';
   templateUrl: 'productes.html',
   providers: [LlistatCompraService]
 })
+
 export class ProductesPage {
   public llistatInicial: any;
   public llistatCompra: any[];

@@ -6,12 +6,11 @@ import { ProductesPage } from '../productes/productes';
 import { StorageApp } from '../helpers/storage.helper';
 import { AlertController } from 'ionic-angular';
 
-
-
 @Component({
   selector: 'page-llistat',
   templateUrl: 'llistat.html'
 })
+
 export class LlistatPage {
   compraLlistat: any;
   colorcolumn: string;
@@ -37,6 +36,7 @@ export class LlistatPage {
 
     this.compraLlistat = _.orderBy(this.navParams.data, 'id');
     (this.compraLlistat.length) ? this.active = true : this.active = false;
+
   }
 
   deleteItem(item: ItemSliding, producta: string, titul: string, id: number) {
