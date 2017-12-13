@@ -2,7 +2,7 @@
 .item {
 
         &--header{
-            @extend .base-font-common;
+            @extend %base-font-common;
             font-size: rem(25px);
             font-style: italic;
         }
@@ -15,7 +15,7 @@
         }
 
         &--producta{
-            @extend .base-font-common;
+            @extend %base-font-common;
             font-weight: 300;
         }
     }

@@ -1,6 +1,6 @@
 .toolbar-title-md{
     font-family: Helvetica;
-    @extend .base-font-common;
+    @extend %base-font-common;
     font-size:rem(25px);
     // font-weight:bold;
     letter-spacing: -2px;
@@ -11,7 +11,7 @@
     height: 100%;
 
     &__header{
-        @extend .base-font-common;
+        @extend %base-font-common;
         color: #000;
         float:right;
         margin-right: 5%;
@@ -20,7 +20,7 @@
             background: #e5e5c9;
             background-color: rgb(1, 121, 111);
             margin-bottom: 0 !important;
-            @extend .base-font-common;
+            @extend %base-font-common;
             color:black;
             font-weight: 300;
         }
@@ -31,7 +31,7 @@
         border-bottom: rem(5px) solid;
 
     span{
-            @extend .base-font-common;
+            @extend %base-font-common;
             font-weight: 300;
         }
 

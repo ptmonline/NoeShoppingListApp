@@ -27,7 +27,7 @@ export class ProductesPage {
     private _globalHelper: GlobalHelper) {
 
     (this.navParams.data.length) ? this.llistatCompra = this.navParams.data : this.llistatCompra = [];
-    
+
     let stored_data = StorageApp.get(ProductesPage.stored_archiu);
     if (stored_data != null && stored_data.length && !this.llistatCompra.length) this.getListQuestion();
 
@@ -74,7 +74,9 @@ export class ProductesPage {
   toggleSection(i) {
     if (this.llistatInicial != null) {
       for (let x = 0; x < this.llistatInicial.llistat.length; x++) {
-        this.llistatInicial.llistat[x].open = false;
+        if (x != i) {
+          this.llistatInicial.llistat[x].open = false;
+        }
       }
       this.llistatInicial.llistat[i].open = !this.llistatInicial.llistat[i].open;
     }

@@ -27340,7 +27340,7 @@ ion-app.md [padding] .scroll-content {
   padding: 0;
 }
 
-.base-font-common, .item--header, .item--producta, .toolbar-title-md, .accordion__header, .accordion__header--active, .accordion__content span {
+.item--header, .item--producta, .toolbar-title-md, .accordion__header, .accordion__header--active, .accordion__content span {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: -2px;

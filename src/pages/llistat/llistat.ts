@@ -72,17 +72,15 @@ export class LlistatPage {
             this.nomLlistat = data;
             StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
             this._globalHelper.presentLoadingCustom();
-            console.log(this.nomLlistat);
           }
         }, {
           text: 'Cancelar'
         }]
       });
       alert.present();
+    } else {
+      this._globalHelper.presentLoadingCustom();
     }
-    // this.archiveDate = new Date();
-    // this.archiveDate = this.archiveDate.toDateString();
-    // StorageApp.set(LlistatPage.stored_nomllistat, this.nomLlistat);
     StorageApp.set(LlistatPage.stored_archiu, this.compraLlistat);
   }
 
