@@ -1,0 +1,14 @@
+@function rem( $size, $base: 10px ) {
+    $rem-size: $size / $base;
+    @return #{$rem-size}rem;
+  }
+
+  @mixin generate-dynamic-classes($name, $property, $items, $steps: 1) {
+    @for $i from 1 through $items {
+      $num: ( $i * $steps );
+        [#{$name}#{$num}],
+      .#{$name}#{$num} {
+          #{$property}: (0px + $num);
+      }
+    }
+  }

@@ -14,11 +14,42 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-ion-toolbar{
-    .button-md{
-        margin: 0;
-    }
-}
+// 1. Margin helpers
+// --------------------------------------------------
+// Margin Top, right, left y bottom. Van del 5 al 100px.
+// mrt --> margin-top
+// mrr --> margin-right
+// mrb --> margin-bottom
+// mrl --> margin-left
+// --------------------------------------------------
+@include generate-dynamic-classes(mrt, margin-top, 40, 5);
+@include generate-dynamic-classes(mrl, margin-left, 40, 5);
+@include generate-dynamic-classes(mrb, margin-bottom, 40, 5);
+@include generate-dynamic-classes(mrr, margin-right, 40, 5);
+// 2. Padding helpers
+// --------------------------------------------------
+// Padding Top, right, left y bottom. Van del 5 al 100px.
+// pat --> padding-top
+// par --> padding-right
+// pab --> padding-bottom
+// pal --> padding-left
+// --------------------------------------------------
+@include generate-dynamic-classes(pat, padding-top, 40, 5);
+@include generate-dynamic-classes(pal, padding-left, 40, 5);
+@include generate-dynamic-classes(pab, padding-bottom, 40, 5);
+@include generate-dynamic-classes(par, padding-right, 40, 5);
+// 3. Padding box
+// --------------------------------------------------
+// Padding box es útil para dar padding a cajas de manera
+// homogenea.
+@include generate-dynamic-classes(padding--, padding, 10, 5);
+// 4. Alineación left / right de texto, de elemento, etc
+// --------------------------------------------------
+// ion-toolbar{
+//     .button-md{
+//         margin: 0;
+//     }
+// }
 
 .footer{
   .toolbar-background-md{
@@ -26,14 +57,14 @@ ion-toolbar{
   }
 }
 .toolbar-md{
-  min-height: 29px;
+  min-height: rem(29px);
 }
 ion-app.md [padding] .scroll-content{
     padding: 0;
 }
 
 .base-font-common{
-  font-size:3rem;
+  font-size:rem(30px);
   text-transform: uppercase;
   letter-spacing: -2px;
 }
@@ -41,7 +72,7 @@ ion-app.md [padding] .scroll-content{
 .item-md{
     padding-left: 0 !important;
     .item-inner{
-        padding-left: 15px;
+        padding-left: rem(15px);
     }
 }
 
@@ -78,5 +109,5 @@ ion-app.md [padding] .scroll-content{
 }
 
 .list {
-  margin-bottom: 4px;
+  margin-bottom: rem(4px);
 }

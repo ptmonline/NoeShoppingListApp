@@ -1,7 +1,7 @@
 .toolbar-title-md{
     font-family: Helvetica;
     @extend .base-font-common;
-    font-size:2.5rem;
+    font-size:rem(25px);
     // font-weight:bold;
     letter-spacing: -2px;
     text-align: right;
@@ -27,8 +27,8 @@
     }
 
     &__content{
-        margin-bottom: 1.2rem;
-        border-bottom: 5px solid rgb(1, 121, 111);
+        margin-bottom: rem(12px);
+        border-bottom: rem(5px) solid rgb(1, 121, 111);
 
     span{
             @extend .base-font-common;
@@ -36,14 +36,15 @@
         }
 
         .button-inner{
-            font-size: 1.4rem;
+            font-size: rem(18px);
+            letter-spacing: rem(0px);
         }
     }
 }
 
 
 .btn-go{
-    font-size:1.7em;
+    font-size:rem(25px);
     text-transform: uppercase;
     text-align: center;
     letter-spacing: -1.5px;

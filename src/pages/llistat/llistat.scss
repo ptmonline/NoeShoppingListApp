@@ -3,13 +3,14 @@
 
         &--header{
             @extend .base-font-common;
+            font-size: rem(25px);
             font-style: italic;
         }
         
         &--titul{
             font-style: italic;
-            margin-right: 40px;
-            font-size: 1.5rem;
+            margin-right: rem(40px);
+            font-size: rem(15px);
             font-weight: bold;
         }
 
