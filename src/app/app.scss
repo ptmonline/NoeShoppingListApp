@@ -46,23 +46,23 @@
 
 
 
-.toolbar-title-md{
+.toolbar-title-md {
   color: white;
 }
 
-  .toolbar-background-md{
-    background-color: black;
-    color: white !important;
-    .footer &{
-      background-color: white;
-      color: black;
-    }
-    
+.toolbar-background-md {
+  background-color: black;
+  color: white !important;
+  .footer &{
+    background-color: white;
+    color: black;
   }
+}
 
 .toolbar-md{
   min-height: rem(29px);
 }
+
 ion-app.md [padding] .scroll-content{
     padding: 0;
 }
