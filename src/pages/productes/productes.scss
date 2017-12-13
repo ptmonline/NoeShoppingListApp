@@ -21,14 +21,14 @@
             background-color: rgb(1, 121, 111);
             margin-bottom: 0 !important;
             @extend .base-font-common;
-            color:white;
+            color:black;
             font-weight: 300;
         }
     }
 
     &__content{
         margin-bottom: rem(12px);
-        border-bottom: rem(5px) solid rgb(1, 121, 111);
+        border-bottom: rem(5px) solid;
 
     span{
             @extend .base-font-common;

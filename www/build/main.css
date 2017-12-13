@@ -27437,13 +27437,13 @@ ion-app.md [padding] .scroll-content {
   background: #e5e5c9;
   background-color: #01796f;
   margin-bottom: 0 !important;
-  color: white;
+  color: black;
   font-weight: 300;
 }
 
 .accordion__content {
   margin-bottom: 1.2rem;
-  border-bottom: 0.5rem solid #01796f;
+  border-bottom: 0.5rem solid;
 }
 
 .accordion__content span {
