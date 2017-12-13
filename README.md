@@ -1,4 +1,4 @@
-Personal shopping list App.
+# Personal shopping list App.
 # Requisitos software
 	- Ionic3  
 	- Angular5
