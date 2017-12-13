@@ -15,7 +15,7 @@
       <div *ngIf="item.open" class="accordion__content"  [ngStyle]="{'border-bottom-color': _globalHelper.getColor(item.id)}" >
         <ion-item-sliding #slidingItem *ngFor="let ite of item.items">
           <ion-item>
-            <span>{{ite}}</span>
+            <span class="pal20">{{ite}}</span>
           </ion-item>
           <ion-item-options side="right">
             <button ion-button expandable (tap)="saveItem(slidingItem, ite, item.title, item.id)">

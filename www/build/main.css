@@ -27350,10 +27350,6 @@ ion-app.md [padding] .scroll-content {
   padding-left: 0 !important;
 }
 
-.item-md .item-inner {
-  padding-left: 1.5rem;
-}
-
 [align-center],
 .align-center,
 [txt--center],
@@ -27430,7 +27426,6 @@ ion-app.md [padding] .scroll-content {
 .accordion__header {
   color: #000;
   float: right;
-  margin-right: 5%;
 }
 
 .accordion__header--active {
