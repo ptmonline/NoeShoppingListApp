@@ -1,2 +1,5 @@
 Personal shopping list App.
-ionic 3 - Angular 5
+# Requisitos software
+	- Ionic3  
+	- Angular5
+    - Typescript
