@@ -27328,8 +27328,18 @@ ion-navbar.toolbar {
   padding: 50px;
 }
 
+.toolbar-title-md {
+  color: white;
+}
+
+.toolbar-background-md {
+  background-color: black;
+  color: white !important;
+}
+
 .footer .toolbar-background-md {
-  color: #00a86b;
+  background-color: white;
+  color: black;
 }
 
 .toolbar-md {
@@ -27416,7 +27426,6 @@ ion-app.md [padding] .scroll-content {
   font-family: Helvetica;
   font-size: 2.5rem;
   letter-spacing: -2px;
-  text-align: right;
 }
 
 .accordion {
@@ -27429,8 +27438,6 @@ ion-app.md [padding] .scroll-content {
 }
 
 .accordion__header--active {
-  background: #e5e5c9;
-  background-color: #01796f;
   margin-bottom: 0 !important;
   color: black;
   font-weight: 300;
@@ -27448,13 +27455,4 @@ ion-app.md [padding] .scroll-content {
 .accordion__content .button-inner {
   font-size: 1.8rem;
   letter-spacing: 0rem;
-}
-
-.btn-go {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: -1.5px;
-  font-weight: bolder;
-  color: #01796f;
 }

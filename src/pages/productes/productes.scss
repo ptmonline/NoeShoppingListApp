@@ -1,10 +1,9 @@
+
 .toolbar-title-md{
     font-family: Helvetica;
     @extend %base-font-common;
     font-size:rem(25px);
-    // font-weight:bold;
     letter-spacing: -2px;
-    text-align: right;
 }
 
 .accordion{
@@ -16,8 +15,6 @@
         float:right;
 
         &--active{
-            background: #e5e5c9;
-            background-color: rgb(1, 121, 111);
             margin-bottom: 0 !important;
             @extend %base-font-common;
             color:black;
@@ -30,8 +27,8 @@
         border-bottom: rem(5px) solid;
 
     span{
-            @extend %base-font-common;
-            font-weight: 300;
+        @extend %base-font-common;
+        font-weight: 300;
         }
 
         .button-inner{
@@ -39,15 +36,5 @@
             letter-spacing: rem(0px);
         }
     }
-}
-
-
-.btn-go{
-    font-size:rem(25px);
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: -1.5px;
-    font-weight: bolder;
-    color: rgb(1, 121, 111);
 }
 

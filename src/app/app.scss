@@ -43,19 +43,23 @@
 // Padding box es útil para dar padding a cajas de manera
 // homogenea.
 @include generate-dynamic-classes(padding--, padding, 10, 5);
-// 4. Alineación left / right de texto, de elemento, etc
-// --------------------------------------------------
-// ion-toolbar{
-//     .button-md{
-//         margin: 0;
-//     }
-// }
 
-.footer{
-  .toolbar-background-md{
-    color: rgb(0, 168, 107);
-  }
+
+
+.toolbar-title-md{
+  color: white;
 }
+
+  .toolbar-background-md{
+    background-color: black;
+    color: white !important;
+    .footer &{
+      background-color: white;
+      color: black;
+    }
+    
+  }
+
 .toolbar-md{
   min-height: rem(29px);
 }
@@ -71,9 +75,6 @@ ion-app.md [padding] .scroll-content{
 
 .item-md{
     padding-left: 0 !important;
-    // .item-inner{
-    //     padding-left: rem(15px);
-    // }
 }
 
 [align-center],
