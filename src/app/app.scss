@@ -47,15 +47,14 @@
 
 
 .toolbar-title-md {
-  color: white;
+  color: #ddd;
 }
 
 .toolbar-background-md {
-  background-color: black;
-  color: white !important;
+  background-color: #01796F;
+  color: #ddd !important;
   .footer &{
-    background-color: white;
-    color: black;
+    background-color: #01796F;
   }
 }
 
@@ -111,4 +110,13 @@ ion-app.md [padding] .scroll-content{
 
 .list {
   margin-bottom: rem(4px);
+}
+.list-header-md{
+  margin-bottom: 0;
+}
+.list-md{
+  margin-bottom: 0;
+}
+.list-md + ion-list ion-list-header{
+  margin-top:0;
 }
